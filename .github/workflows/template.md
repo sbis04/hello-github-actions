@@ -1,4 +1,4 @@
-Hi, {process.env.GITHUB_ACTOR}
+Hi,
 
 Thanks for the **PR**. I will get back to you as soon as possible. 
 
