@@ -1,4 +1,4 @@
-Hi, {GITHUB_ACTOR}
+Hi, {pr_info}
 
 Thanks for the **PR**. I will get back to you as soon as possible. 
 
