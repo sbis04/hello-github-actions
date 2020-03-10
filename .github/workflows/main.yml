@@ -2,22 +2,14 @@ name: A workflow for my Hello World file
 on: pull_request
 
 jobs:
-  build:
-    name: Hello world action
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: harupy/comment-on-pr@master
-      - uses: ./action-a
-        with:
-          MY_NAME: "Souvik"
   comment:
-    name: Add checkout commands
+    name: Add comments to PR
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: harupy/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ process.env.GITHUB_ACTOR }}
         with:
           filename: template.md
