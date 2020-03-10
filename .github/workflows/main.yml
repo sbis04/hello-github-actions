@@ -6,11 +6,18 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@master
       - uses: harupy/comment-on-pr@master
       - uses: ./action-a
+        with:
+          MY_NAME: "Souvik"
+  comment:
+    name: Add checkout commands
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: harupy/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           filename: template.md
-          MY_NAME: "Souvik"
