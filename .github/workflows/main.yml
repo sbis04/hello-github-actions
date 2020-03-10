@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: harupy/comment-on-pr@master
       - uses: ./action-a
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          MY_NAME: "Mona"
+          filename: template.md
+          MY_NAME: "Souvik"
